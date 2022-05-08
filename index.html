@@ -7,13 +7,22 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="">
         <label for="iNome">Nome: </label>
         <input type="text" name="nNome" id="iNome">
 
-        <div class="g-recaptcha" data-sitekey="6LctN9EfAAAAAILh-h25sX8pbcbcN19sBIL_yKmh"></div><br/>
+        <div class="g-recaptcha" data-sitekey="6LctN9EfAAAAAILh-h25sX8pbcbcN19sBIL_yKmh"></div><br>
 
-        <input type="submit" name="nEnviar" value="ENVIAR">
+        <input type="submit" name="nEnviar" value="ENVIAR" onclick="valida()">
     </form>
+
+    <script type="text/javascript">
+        function valida() {
+            if (grecaptcha.getResponde() == "") {
+                alert("Você precisa marcar a caixa de validação");
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>
