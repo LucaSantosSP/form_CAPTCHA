@@ -26,7 +26,7 @@
     </script>
 
     <?php
-    if (isset($_POST['enviar']))
+    if (isset($_POST['ENVIAR']))
         print_r($_POST);
     ?>
 </body>
