@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <form action="http://hub.fatecrl.edu.br/sobrino/recebe.php" method="post">
+    <form action="" method="post">
         <h1>Formulário de utilidade</h1>
         <label for="iNome"><strong>Nome</strong></label><br>
         <input class="infoP" type="text" name="nNome" id="iNome" placeholder="Ex: Fulano da Silva" required size="40"><br>
@@ -26,7 +26,7 @@
 
         <div class="g-recaptcha" data-sitekey="6LctN9EfAAAAAILh-h25sX8pbcbcN19sBIL_yKmh"></div><br>
 
-        <input type="submit" name="nEnviar" value="Enviar" onclick="return valida()">
+        <input type="submit" name="nEnviar" id="iEnviar" value="Enviar" onclick="return valida()">
     </form>
 
     <?php
@@ -47,7 +47,7 @@
 
                 $resultado = json_decode($resposta);
                 if($resultado->success == 1){
-                    echo "Continuar envio do form";
+                    
                 }
             }
         }

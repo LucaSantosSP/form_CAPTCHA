@@ -34,20 +34,14 @@ input.obri:focus{
     background-color: #f4f5d2;
 }
 
-input#enviar{
-    padding: 15px;
-    border: none;
-    margin-top: 10px;
-    background-color: #e0e0e0;
-}
-input#enviar:hover{
-    background-color: black;
-    color: #e0e0e0;
-    cursor: pointer;
-}
-
 fieldset{
     margin-right: 144px;
     margin-bottom: 10px;
     border: 3px solid #e0e0e0;
+}
+
+#iEnviar:hover{
+    cursor: pointer;
+    background-color: #9c9c9c;
+    color: #e0e0e0;
 }
