@@ -18,7 +18,29 @@
     </form>
 
     <?php
-        echo "hello world";
+        if (isset($_POST['nEnviar'])){
+            if (!empty($_POST['g-recaptcha-response'])){
+                $url = "https://www.google.com/recaptcha/api/siteverify";
+                $secret = "6LctN9EfAAAAAPyuxHQVJsjJKaAhfVz8McuMqCDz";
+                $response = $_POST['g-recaptcha-response'];
+                $variaveis = "secret=".$secret."&response=".$response;
+
+                $chamada = curl_init($url);
+                curl_setopt( $chamada, CURLOPT_POST, 1);
+                curl_setopt( $chamada, CURLOPT_POSTFIELDS, $variaveis);
+                curl_setopt( $chamada, CURLOPT_FOLLOWLOCATION, 1);
+                curl_setopt( $chamada, CURLOPT_HEADER, 0);
+                curl_setopt( $chamada, CURLOPT_RETURNTRANSFER, 1);
+                $resposta = curl_exec($chamada);
+
+                $resultado = json_decode($resposta);
+                //print_r($resposta);
+                //echo $resultado->success;
+                if($resultado->success == 1){
+                    echo "Continuar envio do form";
+                }
+            }
+        }
     ?>
 </body>
 </html>
