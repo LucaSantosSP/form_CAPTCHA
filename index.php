@@ -8,13 +8,24 @@
     <script src="scripts/main.js"></script>
 </head>
 <body>
-    <form action="" method="post">
-        <label for="iNome">Nome: </label>
-        <input type="text" name="nNome" id="iNome">
+    <form action="http://hub.fatecrl.edu.br/sobrino/recebe.php" method="post">
+        <h1>Formulário de utilidade</h1>
+        <label for="iNome">Nome</label><br>
+        <input class="infoP" type="text" name="nNome" id="iNome" placeholder="Ex: Fulano da Silva" required size="40"><br>
+
+        <label for="iEmail">E-mail</label><br>
+        <input class="infoP" type="email" name="nEmail" id="iEmail" placeholder="Ex: Fulano@gmail.com" required size="40"><br>
+
+        <fieldset> 
+            <legend>Deseja assinar o nosso guia?</legend>
+            <label> <input type="radio" name="escolha" id="sim" checked>Sim</label>
+            <label> <input type="radio" name="escolha" id="nao">Não</label>
+        </fieldset>
+        <br>
 
         <div class="g-recaptcha" data-sitekey="6LctN9EfAAAAAILh-h25sX8pbcbcN19sBIL_yKmh"></div><br>
 
-        <input type="submit" name="nEnviar" value="enviar" onclick="return valida()">
+        <input type="submit" name="nEnviar" value="Enviar" onclick="return valida()">
     </form>
 
     <?php
@@ -34,8 +45,6 @@
                 $resposta = curl_exec($chamada);
 
                 $resultado = json_decode($resposta);
-                //print_r($resposta);
-                //echo $resultado->success;
                 if($resultado->success == 1){
                     echo "Continuar envio do form";
                 }
