@@ -6,18 +6,19 @@
     <title>Formulário</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="scripts/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <form action="http://hub.fatecrl.edu.br/sobrino/recebe.php" method="post">
         <h1>Formulário de utilidade</h1>
-        <label for="iNome">Nome</label><br>
+        <label for="iNome"><strong>Nome</strong></label><br>
         <input class="infoP" type="text" name="nNome" id="iNome" placeholder="Ex: Fulano da Silva" required size="40"><br>
 
-        <label for="iEmail">E-mail</label><br>
+        <label for="iEmail"><strong>E-mail</strong></label><br>
         <input class="infoP" type="email" name="nEmail" id="iEmail" placeholder="Ex: Fulano@gmail.com" required size="40"><br>
 
         <fieldset> 
-            <legend>Deseja assinar o nosso guia?</legend>
+            <legend><strong>Deseja assinar o nosso guia?</strong></legend>
             <label> <input type="radio" name="escolha" id="sim" checked>Sim</label>
             <label> <input type="radio" name="escolha" id="nao">Não</label>
         </fieldset>
